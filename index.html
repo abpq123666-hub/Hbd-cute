@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Kuchu Puchu! 🎉</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: linear-gradient(135deg, #fbcfe8, #f43f5e, #881337);
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 24px;
+      padding: 30px 20px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 2;
+    }
+    h1 {
+      font-size: 2.2rem;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+      margin-bottom: 10px;
+    }
+    .tagline {
+      font-size: 1.1rem;
+      color: #ffe4e6;
+      margin-bottom: 20px;
+    }
+    .hint-box {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 15px;
+      margin: 15px 0;
+      border: 1px dashed #fff;
+    }
+    .btn {
+      background: #fff;
+      color: #e11d48;
+      border: none;
+      padding: 12px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      width: 40px;
+      height: 55px;
+      border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+      animation: float 6s ease-in-out infinite;
+      z-index: 1;
+      opacity: 0.8;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(20deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="balloon" style="left: 10%; background: #ff758c; animation-duration: 7s;"></div>
+  <div class="balloon" style="left: 30%; background: #ff7eb3; animation-duration: 5s;"></div>
+  <div class="balloon" style="left: 70%; background: #ffb199; animation-duration: 8s;"></div>
+
+  <div class="card">
+    <h1>Happy Birthday Kuchu Puchu! 🎂✨</h1>
+    <p class="tagline">Happy Birthday to my favorite person (and low-key crush)! 😉</p>
+
+    <div class="hint-box">
+      <h3>🕵️‍♂️ Secret Hint Box</h3>
+      <p id="hintText">Tap below to reveal a secret hint about who sent this!</p>
+      <button class="btn" onclick="revealHint()">Reveal Hint 🔍</button>
+    </div>
+
+    <button class="btn" onclick="celebrate()">Celebrate Now 🎉</button>
+  </div>
+
+  <script>
+    const hints = [
+      "Hint 1: Someone who always notices when you wear your best outfit! 😎",
+      "Hint 2: Someone who secretly smiles whenever your name pops up on phone! 📱✨",
+      "Hint 3: Someone who owes you a birthday pizza treat (or vice versa)! 🍕😋",
+      "Hint 4: Okay last hint... Someone who thinks you're extremely cute! 🫣💖"
+    ];
+    let currentHint = 0;
+
+    function revealHint() {
+      document.getElementById('hintText').innerText = hints[currentHint];
+      currentHint = (currentHint + 1) % hints.length;
+    }
+
+    function celebrate() {
+      alert("🎉 Happy Birthday! Wishing you the best day ever, Kuchu Puchu! 🥳❤️");
+    }
+  </script>
+</body>
+</html>
